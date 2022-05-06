@@ -1,4 +1,5 @@
 import React from 'react';
+import './RepoList.css';
 
 export function RepoList({ apiData }) {
   return (
