@@ -16,6 +16,7 @@ export function Buttons({ setSort, apiData }) {
           </button>
         );
       })}
+      {/* maps out languages to their own unique button */}
     </div>
   );
 }

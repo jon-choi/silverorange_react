@@ -14,7 +14,7 @@ export function RepoList({ apiData, sort }) {
             <th>Number of Forks</th>
           </tr>
         </thead>
-        {/* maps over api data and displays accordingly */}
+        {/* displays repos based on sort state, ignore filter when 'all' is selected */}
         <tbody>
           {sort === 'all'
             ? apiData.map((repo, index) => {
