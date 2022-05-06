@@ -22,7 +22,7 @@ export function RepoList({ apiData }) {
                 <td>{repo.name}</td>
                 <td>{repo.description}</td>
                 <td>{repo.language}</td>
-                <td>{repo.number_of_forks}</td>
+                <td>{repo.forks_count}</td>
               </tr>
             );
           })}
