@@ -16,6 +16,8 @@ repos.get('/', async (_: Request, res: Response) => {
 
   const allData = [...jsonData, ...response.data]; // using spread operator and combining both data sources into one
 
+  const forkedRepos = allData.filter((repo) => repo.fork === false); // step 3 calls for only returning repos where repository.fork is false
+
   // TODO: See README.md Task (A). Return repo data here. You’ve got this!
-  res.json(allData);
+  res.json(forkedRepos);
 });
