@@ -6,7 +6,7 @@ import jsonData from '../../data/repos.json'; // importing json repo data
 export const repos = Router();
 
 repos.get('/', async (_: Request, res: Response) => {
-  res.header('Cache-Control', 'no-store');
+  res.header('Content-Type', 'application/json'); // step 4 for calls for returning results as json encoded data, change content type to application/json
 
   res.status(200);
 
