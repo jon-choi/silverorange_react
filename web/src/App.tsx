@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { RepoList } from './components/RepoList';
+import { Buttons } from './components/Buttons';
 
 import './App.css';
 
 export function App() {
   const [apiData, setApiData] = useState([]);
+  const [sort, setSort] = useState('all');
 
   const baseUrl = 'http://localhost:4000';
 
@@ -36,7 +38,8 @@ export function App() {
 
   return (
     <div className="App">
-      {apiData === [] ? null : <RepoList apiData={apiData} />}
+      <Buttons apiData={apiData} setSort={setSort} />
+      {apiData === [] ? null : <RepoList apiData={apiData} sort={sort} />}
     </div>
   );
 }
