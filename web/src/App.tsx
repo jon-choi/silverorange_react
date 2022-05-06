@@ -19,7 +19,13 @@ export function App() {
         if (response.status !== 200) {
           alert('Oops! Unable to fetch data');
         } else {
-          setApiData(await response.json()); // stores fetched data in state if successful
+          const jsonData = await response.json(); // stores fetched data in state if successful
+
+          jsonData.sort((a: any, b: any) =>
+            a.created_at > b.created_at ? 1 : -1
+          ); // displays list of repos in reverse chronological order
+
+          setApiData(jsonData);
         }
       } catch (error) {
         alert('Unable to fetch data');

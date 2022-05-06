@@ -2,7 +2,7 @@ import React from 'react';
 
 export function RepoList({ apiData }) {
   return (
-    <div>
+    <div className="repo-list">
       <h1>List of Repositories</h1>
       <table>
         <thead>
@@ -13,6 +13,7 @@ export function RepoList({ apiData }) {
             <th>Number of Forks</th>
           </tr>
         </thead>
+        {/* maps over api data and displays accordingly */}
         <tbody>
           {apiData.map((repo, index) => {
             return (
